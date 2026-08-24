@@ -17,7 +17,7 @@
 <body>
 
 <h1>Privacy Policy — Board Game Library</h1>
-<p class="updated">Last updated: 2026-07-28</p>
+<p class="updated">Last updated: 2026-08-24</p>
 
 <p>Board Game Library ("the app") is a personal board-game lending-library tracker for Android and iOS. This
 policy explains what data the app handles and why.</p>
@@ -25,22 +25,39 @@ policy explains what data the app handles and why.</p>
 <h2>Summary</h2>
 <ul>
   <li>The app has <strong>no user accounts</strong> and <strong>no developer-run servers</strong>.</li>
-  <li>All of your library data — games, members, checkouts, and play history — is stored <strong>locally on your device</strong> in a private SQLite database.</li>
-  <li>The app contains <strong>no analytics, no advertising, and no third-party trackers</strong>.</li>
-  <li>The only network requests the app makes are to <a href="https://boardgamegeek.com">BoardGameGeek.com</a> ("BGG"), and only when you choose to sync your collection or search for a game.</li>
+  <li>All of your library data — games, friends, checkouts, and play history — is stored <strong>locally on your device</strong> in a private SQLite database.</li>
+  <li>The app contains <strong>no advertising and no behavioral/marketing trackers</strong>.</li>
+  <li>The app makes network requests to three third parties, each only when you take a specific action: <a href="https://boardgamegeek.com">BoardGameGeek.com</a> ("BGG") when you sync or search for a game, <a href="https://www.upcitemdb.com">UPCitemdb.com</a> when you scan a barcode, and <a href="https://sentry.io">Sentry</a> automatically (and only) if the app crashes or hits an unexpected error, to help fix bugs.</li>
 </ul>
 
 <h2>Data stored on your device</h2>
-<p>Everything you enter into the app — your game collection, the members you add, checkout/return history, and
+<p>Everything you enter into the app — your game collection, the friends you add, checkout/return history, and
 play logs — is stored only in a local database on your device. It is never transmitted to the developer.</p>
 
 <h2>Data sent to BoardGameGeek</h2>
-<p>If you use the "Sync with BGG" feature, the app sends your BGG username (and, if you provide it, your BGG
-password or API token) directly to BoardGameGeek's own servers, to retrieve your collection. This exchange is
-between your device and BGG — the developer of this app never sees or stores your BGG credentials or data. See
+<p>If you use the "Sync with BGG" feature (or the app's automatic daily sync, which only runs if you've already
+configured a BGG username), the app sends your BGG username (and, if you provide it, your BGG password or API
+token) directly to BoardGameGeek's own servers, to retrieve your collection. This exchange is between your
+device and BGG — the developer of this app never sees or stores your BGG credentials or data. See
 <a href="https://boardgamegeek.com/privacy">BoardGameGeek's own privacy policy</a> for how they handle that
 information. Your BGG password, if entered, is stored only in your device's secure, encrypted credential
 storage (Android Keystore / iOS Keychain) — never in the app's regular database or in any backup file.</p>
+
+<h2>Barcode scanning</h2>
+<p>If you use the "Scan Barcode" feature to add a game, the app opens your device's camera to read a barcode
+live — no photo or video is captured, saved, or transmitted anywhere; the camera feed is only used, in real
+time, to decode the barcode's number. That number is then sent to <a href="https://www.upcitemdb.com">UPCitemdb.com</a>,
+a third-party product lookup service, to guess a product name, which is used to search BoardGameGeek for a
+matching game for you to confirm. Nothing besides the scanned barcode number is sent, and this only happens
+when you actively choose to scan.</p>
+
+<h2>Crash &amp; error reporting</h2>
+<p>The app uses <a href="https://sentry.io">Sentry</a>, a third-party crash-reporting service, to automatically
+report unexpected crashes or errors so they can be diagnosed and fixed. If the app crashes or hits an internal
+error, Sentry receives a stack trace and basic technical context (device model, OS version, app version) — it
+does not receive your library data, BGG credentials, or any personally identifying information, and there is no
+user account tying this to your identity. This happens automatically in the background; there is currently no
+in-app toggle to disable it.</p>
 
 <h2>Photos</h2>
 <p>If you choose to set a custom cover photo for a game, the app opens your device's photo picker. The photo
